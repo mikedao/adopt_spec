@@ -10,12 +10,12 @@ RSpec.describe "Pets", type: :feature do
     visit "/pets"
     expect(page).to have_content("Name: Athena")
     expect(page).to have_content("Age: 1")
-    expect(page).to have_content("Sex: F")
+    expect(page).to have_content("Sex: female")
     expect(page).to have_content("Shelter: Mike's Shelter")
 
     expect(page).to have_content("Name: Odell")
     expect(page).to have_content("Age: 4")
-    expect(page).to have_content("Sex: M")
+    expect(page).to have_content("Sex: male")
     expect(page).to have_content("Shelter: Meg's Shelter")
   end
 
@@ -23,26 +23,26 @@ RSpec.describe "Pets", type: :feature do
     visit "/shelters/1/pets"
     expect(page).to have_content("Name: Athena")
     expect(page).to have_content("Age: 1")
-    expect(page).to have_content("Sex: F")
+    expect(page).to have_content("Sex: female")
 
     expect(page).to_not have_content("Name: Odell")
     expect(page).to_not have_content("Age: 7")
-    expect(page).to_not have_content("Sex: M")
+    expect(page).to_not have_content("Sex: male")
   end
 
   it "(9) Pets show page" do
     visit "/pets/1"
     expect(page).to have_content("Name: Athena")
     expect(page).to have_content("Age: 1")
-    expect(page).to have_content("Sex: F")
+    expect(page).to have_content("Sex: female")
     expect(page).to have_content("Description: Butthead")
     expect(page).to have_content("Status: Adoptable")
 
     expect(page).to_not have_content("Name: Odell")
     expect(page).to_not have_content("Age: 7")
-    expect(page).to_not have_content("Sex: M")
+    expect(page).to_not have_content("Sex: male")
   end
-  
+
   it "(10) Shelter pets creation" do
     visit "/shelters/2/pets"
 
@@ -65,7 +65,7 @@ RSpec.describe "Pets", type: :feature do
   end
 
   it "(11) pet update" do
-    visit "/pets/2" 
+    visit "/pets/2"
     click_on "Update Pet"
 
     expect(current_path).to eq("/pets/2/edit")
@@ -77,7 +77,7 @@ RSpec.describe "Pets", type: :feature do
     click_on "Update Pet"
 
     expect(current_path).to eq("/pets/2")
-    
+
     expect(page).to have_content("Sodie")
     expect(page).to have_content("Small girl")
     expect(page).to have_content("6")
@@ -91,7 +91,7 @@ RSpec.describe "Pets", type: :feature do
   it "(12) Pet Delete" do
     visit "/pets/1"
     click_on "Delete Pet"
-    
+
     expect(current_path).to eq("/pets")
     expect(page).to_not have_content("Athena")
   end

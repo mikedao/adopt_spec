@@ -12,7 +12,9 @@ Mike's Shelter, 1331 17th Street Denver, CO 80202
 
 Meg's Shelter, 150 Main Street Hershey, PA 17033
 
-There should be two pets as well, Mike's Shelter has one pet, Athena, 1 year old, female, description: butthead. Meg's Shelter has Odell, 4 years old, M and description: good dog.
+There should be two pets as well, Mike's Shelter has one pet, Athena, 1 year old, female, description: butthead. 
+
+Meg's Shelter has Odell, 4 years old, M and description: good dog.
 
 You MUST reset and reseed the Heroku database before each time you run this spec harness.
 
